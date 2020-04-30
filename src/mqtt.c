@@ -918,7 +918,7 @@ struct {
         0x0F, /* MQTT_CONTROL_PUBREL */
         0x0F, /* MQTT_CONTROL_PUBCOMP */
         0x0F, /* MQTT_CONTROL_SUBSCRIBE */
-        0x0F, /* MQTT_CONTROL_SUBACK */
+        0x00, /* MQTT_CONTROL_SUBACK */
         0x0F, /* MQTT_CONTROL_UNSUBSCRIBE */
         0x0F, /* MQTT_CONTROL_UNSUBACK */
         0x0F, /* MQTT_CONTROL_PINGREQ */
