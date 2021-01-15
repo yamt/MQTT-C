@@ -52,6 +52,7 @@ ssize_t mqtt_pal_sendall(mqtt_pal_socket_handle fd, const void* buf, size_t len,
                 /* should call mbedtls_ssl_write later again */
                 break;
             }
+            printf("%s got %d\n", __func__, (int)rv);
             return MQTT_ERROR_SOCKET_ERROR;
         }
         sent += (size_t) rv;
@@ -77,6 +78,7 @@ ssize_t mqtt_pal_recvall(mqtt_pal_socket_handle fd, void* buf, size_t bufsz, int
                 /* should call mbedtls_ssl_read later again */
                 break;
             }
+            printf("%s got %d\n", __func__, (int)rv);
             return MQTT_ERROR_SOCKET_ERROR;
         }
         buf = (char*)buf + rv;
