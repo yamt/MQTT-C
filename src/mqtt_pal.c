@@ -74,8 +74,11 @@ ssize_t mqtt_pal_recvall(mqtt_pal_socket_handle fd, void* buf, size_t bufsz, int
                 /*
                  * Raise an error to trigger a reconnect.
                  */
+                printf("%s got %d, raising an error\n", __func__, (int)rv);
                 return MQTT_ERROR_SOCKET_ERROR;
             }
+            printf("%s got %d, returning what we have (%zu bytes)\n",
+                   __func__, (int)rv, (size_t)(buf - start));
             break;
         }
         if (rv < 0) {
